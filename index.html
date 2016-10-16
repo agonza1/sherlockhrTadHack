@@ -144,16 +144,37 @@
 												<p id="first" class="name" onclick="Function()">Alejandro Nicolas</p>
 												<script type="text/javascript">
 													function Function() {
-														alert(111);
-														var username = 'anicolas@hawk.iit.edu';
-														var password = 'Anicolas1';
-														alert(222);
-														var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
-														alert(333);
-														var header = {'Host': 'https://tadhack.restcomm.com:443/restcomm-rvd/services/apps/AP6c74650b230b4018893c8f61d2d441a6/start?from=anicolas', 'Authorization': auth};
-														alert(header);
-														client.request('GET', '/', header);
-														alert("Done!");
+														var xml = ''+
+																'<RestClientRequest>\n'+
+																'<option name="biscuits">\n'+
+																'<list />\n'+
+																'</option>\n'+
+																'<option name="httpMethod" value="GET" />\n'+
+																'<option name="urlBase" value="https://tadhack.restcomm.com:443" />\n'+
+																'<option name="urlPath" value="/restcomm-rvd/services/apps/AP6c74650b230b4018893c8f61d2d441a6/start"\n />'+
+																'<option name="headers">\n'+
+																'<list>\n'+
+																'<KeyValuePair>\n'+
+																'<option name="key" value="Authorization"\n />'+
+																'<option name="value" value="Basic YW5pY29sYXNAaGF3ay5paXQuZWR1OkFuaWNvbGFzMQ=="\n />'+
+																'</KeyValuePair>\n'+
+																'</list>\n'+
+																'<option>\n'+
+																'<option name="parameters">\n'+
+																'<list />\n'+
+																'</option>\n'+
+																'<option name="parametersEnabled" value="true" />\n'+
+																'<option name="haveTextToSend" value="false" />\n'+
+																'<option name="haveFileToSend" value="false" />\n'+
+																'<option name="isFileUpload" value="false" />\n'+
+																'<option name="textToSend" value="" />\n'+
+																'<option name="filesToSend" value="" />\n'+
+																'</RestClientRequest>\n';
+														var xmlhttp = new XMLHttpRequest();
+														xmlhttp.open("GET","https://tadhack.restcomm.com:443",true);
+														var res=xmlhttp.send(escape(xml));
+														alert("done!");
+														alert(res);
 													}
 												</script>
 											</li>
