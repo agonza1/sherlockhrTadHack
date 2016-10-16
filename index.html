@@ -141,9 +141,21 @@
 												<ul>
 													<li><a href="#"><img src="images/linkedin-icon.jpg" alt=""></a></li>
 												</ul>
-												<p class="name">
-													Alejandro Nicolas
-												</p>
+												<p id="first" class="name" onclick="Function()">Alejandro Nicolas</p>
+												<script type="text/javascript">
+													function Function() {
+														alert(111);
+														var username = 'anicolas@hawk.iit.edu';
+														var password = 'Anicolas1';
+														alert(222);
+														var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+														alert(333);
+														var header = {'Host': 'https://tadhack.restcomm.com:443/restcomm-rvd/services/apps/AP6c74650b230b4018893c8f61d2d441a6/start?from=anicolas', 'Authorization': auth};
+														alert(header);
+														client.request('GET', '/', header);
+														alert("Done!");
+													}
+												</script>
 											</li>
 											<li class="one_quarter even"><img src="images/demo/team-member.gif" alt="">
 												<ul>
