@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebRTC Chat - Chatroom</title>
+    <link rel="stylesheet" href="style_chat.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
+    <script src="chat.js"></script>
+</head>
+<body>
+<h1 id="title">Chatroom</h1>
+<form id="createRoom">
+    <input id="sessionInput"/>
+    <button type="submit">Create it!</button>
+</form>
+<button id="screenShareButton"></button><br><span id="subTitle">(https required for screensharing to work)</span>
+<div id="roomLink" style="font-size:18px; color:#F00;"></div>
+<div class="chat_window">
+    <div class="top_menu">
+        <div class="buttons">
+            <div class="button close"></div>
+            <div class="button minimize"></div>
+            <div class="button maximize"></div>
+        </div>
+        <div class="title">Chat</div>
+    <ul class="messages"></ul>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+            <textarea id="message_input" type= "submit" class="form-control" placeholder="Type your message here..."></textarea>
+        </div>
+        <div class="send_message"><div class="icon"></div>
+            <div class="send_button">Send</div>
+        </div>
+        <div class="videocall"><div class="icon"></div>
+            <div class="videocall_button">Videocall</div>
+        </div>
+        <div class="call"><div class="icon"></div>
+            <div class="call_button">Call</div>
+        </div>
+    </div>
+    </div>
+</div>
+<video id="localVideo"></video>
+<div id="remotes"></div>
+</body>
+</html>
